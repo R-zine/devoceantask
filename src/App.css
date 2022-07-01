@@ -1,0 +1,191 @@
+* {
+  --bg-color: #f8f8fa;
+  --text-color: rgba(0, 0, 0, 0.671);
+}
+
+a {
+  text-decoration: none;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  text-transform: uppercase;
+  box-shadow: 3px 0 20px rgba(0, 0, 0, 0.096);
+  color: var(--text-color);
+}
+
+.Navbar img {
+  height: 15px;
+  transform: rotateZ(90deg);
+}
+
+/* END OF NAVBAR */
+
+/* HOME SECTION */
+
+.Home {
+  background-color: white;
+  margin: 2.5% 4%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfdff;
+  border: 1px solid rgb(155, 155, 155);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(207, 207, 207);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(155, 155, 155);
+}
+
+.home--header,
+.home--content {
+  height: 50px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  font-weight: bold;
+  align-items: center;
+  padding: 0 20px;
+  border: 2px solid var(--bg-color);
+  color: var(--text-color);
+  transition: 0.1s;
+}
+
+.home--header {
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #b41d76;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+.home--content:hover {
+  background-color: #e8e8eb8c;
+}
+
+/* END OF HOME
+
+SINGLE BUSINESS SECTION */
+
+.SingleBusiness {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: absolute;
+  left: 5%;
+  top: 10%;
+
+  justify-content: center;
+}
+
+.SingleBusiness img {
+  width: 90vw;
+  object-fit: cover;
+  height: 20vw;
+  grid-column: 1/-1;
+  margin-bottom: 2%;
+}
+
+.address--card,
+.contact--card {
+  padding: 5% 10%;
+
+  padding-left: 15%;
+}
+
+.address--card h1,
+.contact--card h1 {
+  margin-bottom: 10%;
+}
+
+.nearby--paper {
+  background-color: white;
+
+  padding: 2% 3%;
+  grid-column: 3/5;
+}
+
+.nearby--paper h1 {
+  margin-bottom: 10%;
+}
+
+.nearby--paper h3 {
+  font-weight: 400;
+}
+
+.nearby--content {
+  height: 50px;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  font-weight: bold;
+  align-items: center;
+  padding: 0 20px;
+  border: 2px solid white;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.nearby--content:hover {
+  background-color: white;
+  border: 2px solid var(--bg-color);
+}
+
+@media screen and (max-width: 1050px) {
+  .address--card {
+    grid-row: 2/3;
+    grid-column: 1/3;
+  }
+
+  .contact--card {
+    grid-row: 2/3;
+    grid-column: 3/5;
+  }
+  .nearby--paper {
+    grid-row: 3/4;
+    grid-column: 2/4;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .SingleBusiness {
+    text-align: center;
+  }
+  .address--card {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+  }
+
+  .contact--card {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+  }
+  .nearby--paper {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+  }
+  .home--content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 3fr;
+    height: fit-content;
+  }
+}
